@@ -1,15 +1,41 @@
 <html>
     <head>
-       <title>Form Test Index</title>
+       <title>Dojo Survey</title>
     </head>
     <body>
-      <h1>Index Page</h1>
-      <h3>Create a User</h3>
-      <!-- read on to learn about form actions, we'll talk about the method in a later section -->
-      <form action='/users' method='post'>
-          Name: <input type='text' name='name'><br>
-          Email: <input type='text' name='email'><br>
-          <input type='submit' value='create user'>
-      </form>
+      <div class="wrapper">
+
+        <h1>Dojo Survey</h1>
+        <!-- read on to learn about form actions, we'll talk about the method in a later section -->
+        <form action='/survey_results' method='post'>
+            <p>Your Name:
+              <input type='text' name='name'>
+            </p>
+
+            <p>Dojo Location:
+              <select name="location">
+                <option value="San Jose">San Jose</option>
+                <option value="Seattle">Seattle</option>
+                <option value="Los Angeles">Los Angeles</option>
+              </select>
+            </p>
+
+            <p>Favorite Language:
+              <select name="language">
+                <option value="Python">Python</option>
+                <option value="Ruby">Ruby</option>
+                <option value="Javascript">Javascript</option>
+                <option value="HTML/CSS">HTML/CSS</option>
+            </select>
+          </p>
+
+            <p>Comment (Optional): <br>
+              <textarea name="comment"></textarea></br>
+            </p>
+
+            <input type='submit' value='Submit'>
+        </form>
+
+      </div>
     </body>
 </html>

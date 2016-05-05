@@ -7,6 +7,14 @@
 
         <h1>Dojo Survey</h1>
         <!-- read on to learn about form actions, we'll talk about the method in a later section -->
+
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            {% for message in messages %}
+              <p>{{message}}</p>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
         <form action='/survey_results' method='post'>
             <p>Your Name:
               <input type='text' name='name'>
@@ -29,7 +37,7 @@
             </select>
           </p>
 
-            <p>Comment (Optional): <br>
+            <p>Comment (Required): <br>
               <textarea name="comment"></textarea></br>
             </p>
 
